@@ -20,4 +20,7 @@ export class RoomsService {
     async findAll(): Promise<Room[]> {
         return this.roomModel.find().exec();
     }
+    async findOne(id:string): Promise<Room> {
+        return this.roomModel.findById(id).exec();
+    }
 }

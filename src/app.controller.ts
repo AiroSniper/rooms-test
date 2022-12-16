@@ -25,4 +25,9 @@ export class AppController {
   async allRooms():Promise<Room[]>{
     return this.roomService.findAll()
   }
+
+  @MessagePattern({cmd:'one-room'})
+  async oneRoom(id:string):Promise<Room>{
+    return this.roomService.findOne(id)
+  }
 }
